@@ -3,6 +3,7 @@ import logoF from "../../assets/images/F1.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap-trial";
 import DrawSVGPlugin from "gsap-trial/DrawSVGPlugin";
+import Loader from "react-loaders";
 // import { gsap, DrawSVGPlugin } from "gsap-trial/all";
 
 const Logo = () => {
@@ -42,6 +43,7 @@ const Logo = () => {
   }, []);
 
   return (
+    <>
     <div className="logo-container" ref={bgRef}>
       <img ref={solidLogoRef} className="solid-logo" src={logoF} alt="logo F" />
 
@@ -58,6 +60,8 @@ const Logo = () => {
         </g>
       </svg>
     </div>
+    <Loader type="pacman" />
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-.about-page {
+.about-page, .contact-page {
   .text-zone {
     position: absolute;
     left: 10%;
@@ -68,79 +68,82 @@
       }
     }
   }
+}
 
-  .stage-cube-cont {
-    width: 45%;
-    height: 100%;
-    padding-top: 18%;
-    position: absolute;
-    right: 0;
-    overflow: hidden;
+.stage-cube-cont {
+  width: 45%;
+  height: 100%;
+  padding-top: 18%;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  // border: 1px solid black;
 
-    //spin animation
-    .cubespinner {
-      // je kono name dite pari
-      animation-name: spincube;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation-duration: 12s;
-      transform-style: preserve-3d;
-      transform-origin: 100px 100px 0;
-      margin-left: calc(50% - 100px);
+  //spin animation
+  .cubespinner {
+    // je kono name dite pari
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    margin-left: calc(50% - 100px);
 
-      div {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 200px;
-        border: 1px solid #ccc;
-        background-color: rgba(255, 255, 255, 0.3);
-        font-size: 100px;
-        box-shadow: 0 0 20px 0px lightyellow;
-      }
-
-      .face1 {
-          transform: translateZ(100px);
-      }
-      .face2 {
-        transform: rotateY(90deg) translateZ(100px);
-      }
-      .face3 {
-        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-      }
-      .face4 {
-        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-      }
-      .face5 {
-        transform:rotateY(-90deg) rotateZ(90deg) translateZ(100px);
-      }
-      .face6 {
-        transform: rotateX(-90deg) translateZ(100px);
-      }
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px 0px lightyellow;
+      //for the icon
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      position: absolute; // for every div
     }
 
-    @keyframes spincube {
-      from,
-      to {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-      }
-      16% {
-        transform: rotateY(-90deg);
-      }
-      33% {
-        transform: rotateY(-90deg) rotateZ(90deg);
-      }
-      50% {
-        transform: rotateY(-180deg) rotateZ(90deg);
-      }
-      66% {
-        transform: rotateY(-270deg) rotateZ(90deg);
-      }
-      83% {
-        transform: rotateX(90deg);
-      }
+    .face1 {
+      //translateZ move the center point of the object
+      transform: translateZ(100px);
+    }
+    .face2 {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .face3 {
+      transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+    }
+    .face4 {
+      transform: rotateY(180deg) rotateZ(180deg) translateZ(100px);
+    }
+    .face5 {
+      transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+    }
+    .face6 {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+  }
+
+  @keyframes spincube {
+    from,
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      transform: rotateY(-90deg);
+    }
+    33% {
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      transform: rotateY(-270deg) rotateZ(90deg);
+    }
+    83% {
+      transform: rotateX(180deg);
     }
   }
 }

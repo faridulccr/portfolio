@@ -2,6 +2,7 @@
 $primary-color: #ffd700;
 
 @import "animate.css"; // for using animation in the file
+@import "~loaders.css/src/animations/pacman.scss";
 
 // in sass for link to font family then use @font-face
 @font-face {
@@ -22,4 +23,18 @@ $primary-color: #ffd700;
 input,
 textarea {
   font-family: "Helvetica Neue";
+}
+
+.loader-active {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
 }
