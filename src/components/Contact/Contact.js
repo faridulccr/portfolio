@@ -24,10 +24,10 @@ const Contact = () => {
     // emailjs.com/docs/examples/reactjs/
     emailjs
       .sendForm(
-        "service_6nb17mm", // service ID
-        "template_togyof9", //template ID
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         formRef.current, // form tag ref
-        "32igCE7gbIl3IJm2n" //public key
+        process.env.REACT_APP_PUBLIC_ID
       )
       .then(
         (res) => {
